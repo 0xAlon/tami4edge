@@ -1,6 +1,7 @@
 # tami4edge for Home Assistant
 
 This repository contains a [tami4edge](https://www.tami4.co.il/tami4edge-collection) component for [Home Assistant](https://www.home-assistant.io/).
+
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
 
 ![alt text](https://www.tami4.co.il/sites/default/files/2021-04/edge%2B_white_left_552x820.png)
@@ -21,8 +22,13 @@ The component requires configuration via the Home Assistant configuration file. 
       api_key: API_KEY
 
 
-N.B. You will need an API key from [tami4edge Cloud Token Extractor](https://github.com/0xAlon/tami4edge-Token-Extractor) to use this component.
+N.B. You will need an API key to use this component. 
 
+##### Get token using docker
+```
+docker pull 0xalon/tami4edgecloudtokenextractor:latest
+docker run -it 0xalon/tami4edgecloudtokenextractor:latest
+```
 
 ## Entities
 
