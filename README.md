@@ -24,7 +24,7 @@ The component requires configuration via the Home Assistant configuration file. 
 
 N.B. You will need an API key to use this component. 
 
-##### Get token using docker
+##### Get API_KEY using docker
 ```
 docker pull 0xalon/tami4edgecloudtokenextractor:latest
 docker run -it 0xalon/tami4edgecloudtokenextractor:latest
@@ -34,14 +34,18 @@ docker run -it 0xalon/tami4edgecloudtokenextractor:latest
 
 Each entity will be represented as a sensor with the current state of usage.
 
-- `Daily usage`
-- `Weekly Usage`
-- `Average Daily Usage`
-- `Water Filter`
-- `UV Filter`
+- `Daily Water Consumption`
+- `Weekly Water Consumption`
+- `Average Water Consumption`
+- `Filter Upcoming Replacement`
+- `UV Upcoming Replacementr`
 
 ## buttons
 
-The following button is implemented by the component:
+The following buttons is implemented by the component:
 
-- `Boil water`
+- `Boil Water`
+- `Sync`
+
+### Disclaimer
+I don't have any contact with the company and am not responsible for any loss or damage caused by this integration.
