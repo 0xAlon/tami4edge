@@ -20,5 +20,5 @@ SYNC_ICON = "mdi:sync-circle"
 
 # Overall scan interval
 TOKEN_SCAN_INTERVAL = timedelta(hours=3)
-WATER_QUALITY_INTERVAL = timedelta(hours=1)
-WATER_CONSUMPTION_INTERVAL = timedelta(hours=8)
+WATER_QUALITY_INTERVAL = timedelta(hours=8)
+WATER_CONSUMPTION_INTERVAL = timedelta(hours=1)
