@@ -1,4 +1,6 @@
 # tami4edge for Home Assistant
+# Due to the recent changes in tami4, some of the API calls need to be replaced with new ones. I am working hard to update the code and release it as soon as possible.
+
 
 This repository contains a [tami4edge](https://www.tami4.co.il/tami4edge-collection) component for [Home Assistant](https://www.home-assistant.io/).
 
