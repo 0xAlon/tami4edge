@@ -1,6 +1,4 @@
 # tami4edge for Home Assistant
-# Due to the recent changes in tami4, some of the API calls need to be replaced with new ones. I am working hard to update the code and release it as soon as possible.
-
 
 This repository contains a [tami4edge](https://www.tami4.co.il/tami4edge-collection) component for [Home Assistant](https://www.home-assistant.io/).
 
@@ -9,12 +7,13 @@ This repository contains a [tami4edge](https://www.tami4.co.il/tami4edge-collect
 ![alt text](https://www.tami4.co.il/sites/default/files/2021-04/edge%2B_white_left_552x820.png)
 
 
-The component is developed by [Alon Teplitsky](https://www.linkedin.com/in/alon-teplitsky/).
+The component is a fork for the one that was developed by [Alon Teplitsky](https://www.linkedin.com/in/alon-teplitsky/).
 
 ## Installation
 
 Installation via [HACS](https://hacs.xyz/) (recommended) or by copying `custom_components/tami4edge` into your Home Assistant configuration directory.
 
+# This version does not support HA versions below 2023.07 as it uses services that can return values. 
 
 ## Configuration
 
@@ -48,6 +47,12 @@ The following buttons is implemented by the component:
 
 - `Boil Water`
 - `Sync`
+
+## Services
+
+The following services are implemented by the component:
+- `fetch_drinks` - enable you to get all custom drinks that are configured in the app
+- `prepare_drink` - prepare one of the custom drinks
 
 ### Disclaimer
 I don't have any contact with the company and am not responsible for any loss or damage caused by this integration.
