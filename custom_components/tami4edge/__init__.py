@@ -74,7 +74,11 @@ async def async_setup(hass, config):
     async def handle_fetch_drinks(call) -> ServiceResponse:
         return await handler.client.drinks()
 
+    async def handle_boile_water(self):
+        return await handler.client.boile_water()
+    
     # Init Services
+    hass.services.async_register(DOMAIN, "boile_water", handle_boile_water)
     hass.services.async_register(DOMAIN, "prepare_drink", handle_prepare_drink)
     hass.services.async_register(DOMAIN, "fetch_drinks", handle_fetch_drinks, supports_response=SupportsResponse.ONLY)
 
