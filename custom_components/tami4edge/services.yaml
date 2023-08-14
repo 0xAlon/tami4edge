@@ -10,3 +10,6 @@ prepare_drink:
 fetch_drinks:
   name: Fetch Drinks
   description: Fetch all drinks configured in your tami4edge app.
+boile_water:
+  name: Boile The Water
+  description: Boile Water in your tami4edge.
