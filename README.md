@@ -53,6 +53,7 @@ The following buttons is implemented by the component:
 The following services are implemented by the component:
 - `fetch_drinks` - enable you to get all custom drinks that are configured in the app
 - `prepare_drink` - prepare one of the custom drinks
+- `boile_water` - Boile the Water
 
 ### Disclaimer
 I don't have any contact with the company and am not responsible for any loss or damage caused by this integration.
