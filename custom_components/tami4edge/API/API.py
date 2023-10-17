@@ -96,3 +96,11 @@ class Tami4EdgeApi:
         response = await self._send_get_request(api='/api/v1/device')
         self.id = response[0]['id']
         return response
+
+    async def prepare_drink(self, drink_id):
+        response = await self._send_post_request(api=f'/api/v1/device/{self.id}/prepareDrink/{drink_id}')
+        return response
+
+    async def drinks(self):
+        response = await self._send_get_request(api='/api/v1/customer/drink')
+        return response

@@ -1,0 +1,15 @@
+prepare_drink:
+  name: Prepare Drink
+  description: Use a drink id to prepare a drink on your tami4 edge.
+  fields:
+    drink_id:
+      name: Drink ID
+      description: the drink id to prepare
+      example: d508bdc6-ff41-41ec-8e19-6674c0ecf71d
+      required: true
+fetch_drinks:
+  name: Fetch Drinks
+  description: Fetch all drinks configured in your tami4edge app.
+boile_water:
+  name: Boile The Water
+  description: Boile Water in your tami4edge.

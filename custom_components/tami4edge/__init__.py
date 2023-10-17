@@ -6,6 +6,8 @@ https://github.com/0xAlon
 """
 
 import logging
+
+from homeassistant.core import ServiceResponse, SupportsResponse
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 import homeassistant.helpers.config_validation as cv
 import voluptuous as vol
@@ -18,6 +20,7 @@ from .const import (
     PLATFORMS,
     TOKEN_SCAN_INTERVAL
 )
+
 from homeassistant.const import CONF_API_KEY
 
 _LOGGER = logging.getLogger(__name__)
@@ -43,7 +46,7 @@ async def async_setup(hass, config):
     # Create DATA dict
     hass.data[DOMAIN_DATA] = {}
 
-    # Get API key 
+    # Get API key
     api_key = config[DOMAIN].get(CONF_API_KEY)
 
     # Configure the client.
@@ -62,6 +65,22 @@ async def async_setup(hass, config):
             discovery.async_load_platform(hass, domain, DOMAIN, {}, config)
 
         )
+
+    # Service Functions
+    async def handle_prepare_drink(call):
+        drink = call.data.get('drink_id')
+        x = await handler.client.prepare_drink(drink_id=drink)
+
+    async def handle_fetch_drinks(call) -> ServiceResponse:
+        return await handler.client.drinks()
+
+    async def handle_boile_water(self):
+        return await handler.client.boile_water()
+    
+    # Init Services
+    hass.services.async_register(DOMAIN, "boile_water", handle_boile_water)
+    hass.services.async_register(DOMAIN, "prepare_drink", handle_prepare_drink)
+    hass.services.async_register(DOMAIN, "fetch_drinks", handle_fetch_drinks, supports_response=SupportsResponse.ONLY)
 
     async_track_time_interval(hass, client.refresh_token, TOKEN_SCAN_INTERVAL)  # Auto Update token
 
